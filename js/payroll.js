@@ -26,21 +26,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 // UC-11
 const save = () => {
-    try{
+    try {
         let employeePayrollData = createEmployeePayroll();
         createAndUpdateStorage(employeePayrollData);
-    }catch (e) {
+    } catch (e) {
         return;
     }
 }
 
 // UC-12
-function createAndUpdateStorage(employeePayrollData){
+function createAndUpdateStorage(employeePayrollData) {
     let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
-    if(employeePayrollList != undefined){
+    if (employeePayrollList != undefined) {
         employeePayrollList.push(employeePayrollData);
     }
-    else{
+    else {
         employeePayrollList = [employeePayrollData];
     }
     alert(employeePayrollList.toString());
@@ -49,9 +49,9 @@ function createAndUpdateStorage(employeePayrollData){
 
 const createEmployeePayroll = () => {
     let employeePayrollData = new EmployeePayrollData();
-    try{
+    try {
         employeePayrollData.name = getInputValuesById('#name');
-    }catch(e){
+    } catch (e) {
         setTextValue('.test-error', e);
         throw e;
     }
@@ -60,9 +60,9 @@ const createEmployeePayroll = () => {
     employeePayrollData.department = getSelectedValues('[name=department]');
     employeePayrollData.salary = getInputValuesById('#salary');
     employeePayrollData.note = getInputValuesById('#notes');
-    let date = getInputValuesById('#day') + " "+getInputValuesById('#month')+ " " + getInputValuesById('#year');
-    employeePayrollData.date=Date.parse(date);
-    console.log('Hello');
+    let date = getInputValuesById('#day') + " " + getInputValuesById('#month') + " " + getInputValuesById('#year');
+    employeePayrollData.date = Date.parse(date);
+    // console.log('Hello');
     alert(employeePayrollData.toString());
     return employeePayrollData;
 }
@@ -71,7 +71,7 @@ const getSelectedValues = (propertyValue) => {
     let allItems = document.querySelectorAll(propertyValue);
     let selItems = [];
     allItems.forEach(item => {
-        if(item.checked)
+        if (item.checked)
             selItems.push(item.value);
     });
     return selItems;
@@ -89,15 +89,15 @@ const getInputElementValue = (id) => {
 
 // UC-13
 const reserForm = () => {
-    setValue('#name','');
+    setValue('#name', '');
     unsetSelectedValues('[name=profile]');
     unsetSelectedValues('[name=gender]');
     unsetSelectedValues('[name=department]');
-    setValue('#salary','');
-    setValue('#notes','');
-    setValue('#day','');
-    setValue('#month','January');
-    setValue('#year','2020');
+    setValue('#salary', '');
+    setValue('#notes', '');
+    setValue('#day', '');
+    setValue('#month', 'January');
+    setValue('#year', '2020');
 }
 
 const unsetSelectedValues = (propertyValue) => {
