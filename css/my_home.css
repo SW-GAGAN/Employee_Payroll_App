@@ -1,15 +1,16 @@
 /* UC-14 */
-html body{
+
+html body {
     margin: 0;
     height: 100%;
 }
 
-.header{
+.header {
     padding: 15px 0;
     background-color: #ffffff;
 }
 
-.header-content{
+.header-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -17,7 +18,7 @@ html body{
     border: 0pc solid green;
 }
 
-.logo-content{
+.logo-content {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,22 +26,74 @@ html body{
     width: 80%;
 }
 
-.logo-content-img{
+.logo-content-img {
     border: solid 0px #42515f;
 }
 
-.emp-text{
+.emp-text {
     font: normal normal bold 20px/25px Monteserrat;
     font-family: "Monteserrat", sans-serif;
     letter-spacing: 0px;
     color: #82a70c;
-    text-transform: capitalize;    
+    text-transform: capitalize;
 }
 
-.emp-payroll{
+.emp-payroll {
     color: #42515f;
 }
 
 * {
     box-sizing: border-box;
+}
+
+/* UC-15 */
+
+.add-button {
+    font: normal normal normal 22px/29px Roboto;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+    background: #82a70c 0% 0% no-repeat padding-box;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 18px;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 80px);
+    background-color: #f7f7f7;
+    padding: 30px 0 10px;
+    box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+.emp-detail-text {
+    font: normal normal bold 24px/25px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    opacity: 1;
+}
+
+.emp-count {
+    background-color: #82a70c;
+    color: #ffffff;
+    border-radius: 42%;
+    font-size: 16px;
+    width: 26px;
+    text-align: center;
+    display: inline-block;
 }
